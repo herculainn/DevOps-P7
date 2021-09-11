@@ -20,6 +20,9 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '14'
-          distribution: 'adopt'
+          distribution: 'adopt'    
+      # https://github.com/actions/starter-workflows/issues/171
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
       - name: Build with Gradle
         run: ./gradlew build
