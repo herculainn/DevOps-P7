@@ -31,7 +31,7 @@ jobs:
       - uses: actions/upload-artifact@main
         with:
           name: RevolutBDDArtefact
-          path: public/
+          path: build/
 
   test:
     needs: build
@@ -42,7 +42,7 @@ jobs:
       - uses: actions/download-artifact@main
         with: 
           name: RevolutBDDArtefact
-          path: public
+          path: build
           
       # https://github.com/actions/starter-workflows/issues/171
       - name: Make gradlew executable
